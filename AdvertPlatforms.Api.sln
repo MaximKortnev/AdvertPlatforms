@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertPlatforms.Api", "AdvertPlatforms.Api\AdvertPlatforms.Api.csproj", "{52E5F05F-05E1-4123-850E-AFA7D7B72B56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52E5F05F-05E1-4123-850E-AFA7D7B72B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E5F05F-05E1-4123-850E-AFA7D7B72B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E5F05F-05E1-4123-850E-AFA7D7B72B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E5F05F-05E1-4123-850E-AFA7D7B72B56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32E9B428-4109-425B-AEE3-E682A45D4BAB}
+	EndGlobalSection
+EndGlobal
