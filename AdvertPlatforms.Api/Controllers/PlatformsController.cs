@@ -49,7 +49,7 @@ namespace AdvertPlatforms.Api.Controllers
         }
 
         /// <summary>
-        /// Найти площадки, охватывающие указанную локацию (включая предки).
+        /// Поиск площадок.
         /// </summary>
         [HttpGet("search")]
         [ProducesResponseType(typeof(List<string>), StatusCodes.Status200OK)]
