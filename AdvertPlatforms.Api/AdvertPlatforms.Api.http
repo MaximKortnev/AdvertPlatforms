@@ -1,6 +1,6 @@
 @AdvertPlatforms.Api_HostAddress = http://localhost:5070
 
-GET {{AdvertPlatforms.Api_HostAddress}}/weatherforecast/
+GET {{AdvertPlatforms.Api_HostAddress}}/
 Accept: application/json
 
 ###
