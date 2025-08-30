@@ -25,6 +25,7 @@ namespace AdvertPlatforms.Api.Services
                 if (string.IsNullOrEmpty(line))
                     continue; 
 
+
                 var parts = line.Split(':', 2);
                 if (parts.Length != 2)
                     throw new FormatException($"Строка {lineNo}: отсутствует разделитель ':'.");

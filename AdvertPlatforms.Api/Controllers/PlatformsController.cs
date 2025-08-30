@@ -21,9 +21,10 @@ namespace AdvertPlatforms.Api.Controllers
         /// Формат строк: Название: /loc1, /loc2, ...
         /// </summary>
         [HttpPost("upload")]
+        [Consumes("multipart/form-data")]
         [ProducesResponseType(typeof(UploadResult), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Upload([FromForm] IFormFile file)
+        public async Task<IActionResult> Upload(IFormFile file)
         {
             if (file is null || file.Length == 0)
                 return BadRequest("Файл не передан или пуст.");

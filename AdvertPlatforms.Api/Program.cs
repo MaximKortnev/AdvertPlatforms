@@ -19,13 +19,22 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddSingleton<IPlatformRepository, PlatformRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", b =>
+    {
+        b.AllowAnyOrigin()
+         .AllowAnyMethod()
+         .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Advertising Platforms API v1");
+    c.SwaggerEndpoint("https://localhost:5070/swagger/v1/swagger.json", "Advertising Platforms API v1");
     c.RoutePrefix = "swagger";
 });
 
@@ -34,6 +43,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
