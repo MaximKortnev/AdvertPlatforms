@@ -95,7 +95,7 @@ GET /api/Platforms/search?location=/moscow
 
 ---
 
-## 📌 API Endpoints Summary
+## 📌 Эндпоинты
 
 - `POST /api/Platforms/upload` — загрузка файла с данными  
 - `GET /api/Platforms/search` — поиск площадки в регионе  
