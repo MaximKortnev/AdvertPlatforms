@@ -10,7 +10,7 @@
 ### Шаги по установке и запуску
 1. **Клонирование репозитория**
 
-    *git clone https://github.com/MaximKortnev/ApplicationAPI.git*
+    *git clone [https://github.com/MaximKortnev/ApplicationAPI.git](https://github.com/MaximKortnev/AdvertPlatforms.git)*
    или 
 
 <img width="977" height="242" alt="image" src="https://github.com/user-attachments/assets/2ba99be5-52c2-4d27-af35-985d42fd0ed2" />
