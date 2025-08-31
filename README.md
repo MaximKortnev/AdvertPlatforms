@@ -1,45 +1,103 @@
-# Инструкция по запуску сервиса
-Данный репозиторий содержит API для работы с рекламными площадками. Для запуска сервиса выполните следующие шаги:
+# 🚀 API для задачи "Рекламные площадки"
 
-## Предварительные требования
-1. **.NET 9 SDK with ASP.net Core** 
-2. **Xunit**
-3. **FluentAssertions**
-4. **Swagger**
+Этот проект представляет собой **ASP.NET Core Web API** для загрузки и поиска рекламных площадок.  
+API снабжён удобным интерфейсом **Swagger UI** для тестирования эндпоинтов.
 
-### Шаги по установке и запуску
-1. **Клонирование репозитория**
+---
 
-    *git clone [https://github.com/MaximKortnev/ApplicationAPI.git](https://github.com/MaximKortnev/AdvertPlatforms.git)*
-   или 
+## ✅ Предварительные требования
 
-<img width="977" height="242" alt="image" src="https://github.com/user-attachments/assets/2ba99be5-52c2-4d27-af35-985d42fd0ed2" />
+Перед запуском убедитесь, что у вас установлено:
 
-3. **Переход в директорию проекта**
-   
-    *cd your-repository*
-> Замените your-repository на название вашего репозитория.
+- [.NET 9 SDK (с поддержкой ASP.NET Core)](https://dotnet.microsoft.com/download/dotnet/9.0)  
+- [xUnit](https://xunit.net/) — для модульного тестирования  
+- [FluentAssertions](https://fluentassertions.com/) — для удобных проверок в тестах  
+- [Swashbuckle.AspNetCore (Swagger)](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)  
 
-4. **Запуск проекта**
+---
 
-*dotnet run*
+## 🔧 Установка и запуск
 
-или
-<img width="1004" height="285" alt="image" src="https://github.com/user-attachments/assets/e532bd0e-e6e5-4269-92b8-0390eb0ae7ba" />
+### 1. Клонируйте репозиторий
+```bash
+git clone https://github.com/MaximKortnev/AdvertPlatforms.git
+```
 
-> После этого API будет доступен по адресу > После этого API будет доступен по адресу [https://localhost:7287/swagger/index.html](https://localhost:5070/swagger/index.html).
+### 2. Перейдите в директорию проекта
+```bash
+cd AdvertPlatforms
+```
 
-В итоге вы должны увидеть следующее:
-<img width="1513" height="716" alt="image" src="https://github.com/user-attachments/assets/803dc793-00f6-4a81-bd2f-7f8362819a35" />
+### 3. Запустите проект
+```bash
+dotnet run
+```
+
+После успешного запуска API будет доступно по адресу:  
+👉 [https://localhost:5070/swagger/index.html](https://localhost:5070/swagger/index.html)
+
+---
+
+## 📖 Использование API
+
+### 1. Swagger UI
+Откройте в браузере:  
+[https://localhost:5070/swagger/index.html](https://localhost:5070/swagger/index.html)
+
+В интерфейсе можно протестировать все доступные эндпоинты.
+
+---
+
+### 2. Эндпоинты
+
+#### 📂 Загрузка файла с данными
+```
+POST /api/Platforms/upload
+```
+Позволяет загрузить текстовый файл с описанием рекламных площадок.  
+Формат строк в файле:
+```
+Название: /loc1, /loc2, ...
+```
+
+Пример запроса в Swagger UI:
+- В поле **file** выберите `.txt` файл  
+- Нажмите **Execute**  
+
+---
+
+#### 🔍 Поиск рекламной площадки
+```
+GET /api/Platforms/search?location=/loc1
+```
+
+- **location** — путь, начинающийся с `/`  
+- В ответе возвращается список найденных площадок  
+
+Пример:
+```
+GET /api/Platforms/search?location=/moscow
+```
+
+---
+
+## 🖼 Скриншоты
+
+### Swagger UI (главная страница)
+![Swagger UI](https://github.com/user-attachments/assets/803dc793-00f6-4a81-bd2f-7f8362819a35)
 
 ### Загрузка файла
-<img width="1479" height="1056" alt="image" src="https://github.com/user-attachments/assets/5e5dc264-4f64-48da-beb3-7a32eb1eabee" />
+![Загрузка файла](https://github.com/user-attachments/assets/5e5dc264-4f64-48da-beb3-7a32eb1eabee)
 
-### Поиск рекламной площадки
-<img width="1439" height="885" alt="image" src="https://github.com/user-attachments/assets/464d4192-3957-4e7d-a0b4-f3c12a4ec7ea" />
-<img width="1435" height="881" alt="image" src="https://github.com/user-attachments/assets/d24a96ae-4101-4d9a-b3ec-8a1e6cd54c25" />
+### Поиск площадки
+![Поиск 1](https://github.com/user-attachments/assets/464d4192-3957-4e7d-a0b4-f3c12a4ec7ea)  
+![Поиск 2](https://github.com/user-attachments/assets/d24a96ae-4101-4d9a-b3ec-8a1e6cd54c25)
 
-# API Endpoints
-- Загрузка файла с данными: POST /api/Platforms/upload
-- Поиск площадки в регионе: GET /api/Platform/search
+---
 
+## 📌 API Endpoints Summary
+
+- `POST /api/Platforms/upload` — загрузка файла с данными  
+- `GET /api/Platforms/search` — поиск площадки в регионе  
+
+---
